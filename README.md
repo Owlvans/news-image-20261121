@@ -19,9 +19,9 @@ source on the page:
   flat-vector illustration drawn by the program.
 - **A world map** on a true equirectangular lon/lat projection with 18
   numbered pins placed at each story's real location.
-- **10 feature stories** with chunky icons, and **23 one-line briefs**, each
-  tagged with its source (Reuters, AP, BBC, Al Jazeera, WSJ, CNN, IMD, ISW,
-  Rio Times, Latin Times, Korea JoongAng Daily).
+- **10 feature stories** with colour-banded city headers, and **23 one-line
+  briefs**, each tagged with its source (Reuters, AP, BBC, Al Jazeera, WSJ,
+  CNN, IMD, ISW, Rio Times, Antara, Detik, Bali Kini, Korea JoongAng Daily).
 - **A date-check strip** naming the big adjacent-day stories deliberately
   left out (Thursday's Shenzhen summit and ICJ ruling, Friday's Kyiv barrage
   and Cyclone Akvan landfall), because they are not Saturday's news.
@@ -31,10 +31,13 @@ Claims are attributed, not stated as fact.
 ## How it works
 
 `main.py` (Python 3.13, standard library only) renders the page with its own
-rasteriser, 5×7 typeface and PNG writer at 2× supersampling, downsamples to
-1024×1024, and writes `/output/entry.png`. No network, no randomness, no
-clock: two runs produce byte-identical output (58,386 bytes, well under the
-1 MiB cap).
+rasteriser and PNG writer at 2× supersampling, downsamples to 1024×1024, and
+writes `/output/entry.png`. The type is a proportional serif + sans drawn
+from vector stroke skeletons and rasterised with a signed-distance field, so
+the page sets like print: a giant serif date, red serif dek, bold reserved
+for headlines and stat numerals, body text in regular weight. No network, no
+randomness, no clock: two runs produce byte-identical output (258,843 bytes,
+well under the 1 MiB cap).
 
 ## License
 
